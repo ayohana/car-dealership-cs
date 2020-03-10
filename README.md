@@ -10,7 +10,9 @@
 * Created Lists, loops, multiple controllers
 * Apply Layouts and Partials
 * Git Mob for pair commits
-* Struggles: audio setup
+* Using Dictionaries
+* Parcels Project
+* Struggles: Audio setup
 
 ## Setup/Installation Requirements
 
