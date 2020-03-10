@@ -1,17 +1,18 @@
 @using CarDealership.Models;
 
-<h1>Car Dealership</h1>
+<h1>Car Filter Purchase</h1>
 @if (Model.Count == 0)
 {
-  <p>There are no cars in the list</p>
+  <p>There are no cars under your search</p>
 }
 @foreach (Car car in Model)
-{
+{ 
+  <p>These cars matched your search:</p>
   <p>1. Car's Model: @car.MakeModel</p>
   <p>2. Car Price: @car.Price</p>
   <p>3. Car Miles: @car.Miles</p>
   <p>4. Production Year: @car.Message</p>
 }
 
-<a href="/cars/new">Add a new item.</a>
-<a href="/filter">Apply car price filter.</a>
+<a href="/cars/new">Add a new car</a>
+<a href="/cars">See list of cars</a>

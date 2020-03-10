@@ -11,6 +11,8 @@ namespace CarDealership.Models
     
     private static List<Car> _models = new List<Car> {};
 
+    private static List<Car> _carsMatchingSearch = new List<Car>(0);
+
     public Car(string makeModel, int price, int miles, string message)
     {
       MakeModel = makeModel;
@@ -28,6 +30,24 @@ namespace CarDealership.Models
     public bool WorthBuying(int maxPrice, int maxMiles)
     {
       return (Price<=maxPrice && Miles<=maxMiles);
+    }
+
+    public static List <Car> CreateCarsMatchingSearch(int maxPrice, int maxMiles)
+    {
+      ClearCarsMatchingSearch();
+      foreach (Car automobile in _models)
+      {
+        if (automobile.WorthBuying(maxPrice, maxMiles))
+        {
+          _carsMatchingSearch.Add(automobile);
+        }
+      }
+      return _carsMatchingSearch;
+    }
+
+    public static void ClearCarsMatchingSearch()
+    {
+      _carsMatchingSearch.Clear();
     }
   } 
 }

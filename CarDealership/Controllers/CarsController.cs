@@ -26,5 +26,17 @@ namespace CarDealership.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpGet("/filter")]
+    public ActionResult Filter()
+    {
+      return View();
+    }
+
+    [HttpPost ("/result")]
+    public ActionResult Result(int maxPrice, int maxMiles)
+    {
+      return View(Car.CreateCarsMatchingSearch(maxPrice, maxMiles));
+    }
+
   }
 }
